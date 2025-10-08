@@ -112,22 +112,25 @@ int main() {
         cout<<"1. Pizza $10\n2. Burger $8\n3. Salad $5\n4. Exit\n";
         cout<<"Enter your choice: ";
         cin>>choice;
-
-        cout<<"Enter the number of order: ";
-        cin>>number;
-        switch(choice) {
-            case 1:
-                total=totalPrice(10, number);
-                break;
-            case 2:
-                total=totalPrice(8, number);
-                break;
-            case 3:
-                total=totalPrice(5, number);
-                break;
+        if (choice !=4) {
+            cout<<"Enter the number of order: ";
+            cin>>number;
+            switch(choice) {
+                case 1:
+                    total=totalPrice(10, number);
+                    break;
+                case 2:
+                    total=totalPrice(8, number);
+                    break;
+                case 3:
+                    total=totalPrice(5, number);
+                    break;
+            }
         }
+
         cout<<"Total Price: "<<total<<endl;
     } while (choice!=4);
+    if (choice == 4) cout<<"Thank you for choosing us!"<<endl;
     return 0;
 }
 
